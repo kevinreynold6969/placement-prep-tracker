@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" data-theme="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Placement Prep Tracker | High-Voltage DSA Interview Log</title>
+<!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- BEGIN: Tailwind Config Script -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              orange: '#FF3A1E',
+              orangeDark: '#E62E12',
+              black: '#0D0D11',
+              charcoal: '#14141A',
+              cardDark: '#16161F',
+              sakura: '#FFAEC0',
+              sakuraLight: '#FFC5CF',
+              mintAccent: '#A7F3D0',
+              mintDark: '#059669',
+              lightGray: '#F7F7F8',
+            }
+          },
+          boxShadow: {
+            'neo': '4px 4px 0px 0px #0D0D11',
+            'neo-lg': '6px 6px 0px 0px #0D0D11',
+            'neo-sm': '2.5px 2.5px 0px 0px #0D0D11',
+            'neo-white': '4px 4px 0px 0px #FFFFFF',
+            'neo-mint': '4px 4px 0px 0px #A7F3D0',
+          }
+        }
+      }
+    };
+  </script>
+<!-- END: Tailwind Config Script -->
+<!-- BEGIN: Custom Theme & Grid Styles -->
+<style data-purpose="custom-grid">
+    /* Subtle technical grid pattern for hero top in light mode */
+    .bg-grid-tech {
+      background-size: 38px 38px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+    }
+    
+    /* Dedicated Robust Theme Overrides for immediate and reliable visual toggle */
+    body.theme-sakura,
+    html.theme-sakura body {
+      background-color: #0A0A0C !important;
+      color: #F3F4F6 !important;
+    }
+    
+    body.theme-sakura #heroSection {
+      background-color: #FFAEC0 !important;
+    }
+    
+    body.theme-sakura #how-it-works {
+      background-color: #0A0A0C !important;
+      border-color: #262626 !important;
+    }
+
+    body.theme-sakura #how-it-works h3 {
+      color: #FFFFFF !important;
+    }
+
+    body.theme-sakura #how-it-works p.subtitle-text {
+      color: #A3A3A3 !important;
+    }
+
+    body.theme-sakura #how-it-works article {
+      background-color: #16161F !important;
+      border-color: #000000 !important;
+    }
+
+    body.theme-sakura #how-it-works article h4 {
+      color: #FFFFFF !important;
+    }
+
+    body.theme-sakura #how-it-works article p {
+      color: #D4D4D8 !important;
+    }
+
+    body.theme-sakura #terminal-section {
+      background-color: #0A0A0C !important;
+    }
+
+    body.theme-sakura #terminal-section h3 {
+      color: #FFFFFF !important;
+    }
+
+    body.theme-sakura #quick-log .bg-white {
+      background-color: #16161F !important;
+      color: #FFFFFF !important;
+    }
+
+    body.theme-sakura #quick-log .bg-neutral-50 {
+      background-color: #16161F !important;
+      color: #FFFFFF !important;
+    }
+
+    body.theme-sakura #quick-log h4 {
+      color: #FFFFFF !important;
+    }
+
+    body.theme-sakura #quick-log input,
+    body.theme-sakura #quick-log select,
+    body.theme-sakura #quick-log textarea {
+      background-color: #0D0D11 !important;
+      color: #FFFFFF !important;
+      border-color: #3f3f46 !important;
+    }
+
+    body.theme-sakura #quick-log label {
+      color: #FFFFFF !important;
+    }
+  </style>
+<style data-purpose="theme-transitions">
+    /* Smooth theme transitions across common elements */
+    body, section, header, nav, div, button, span, table {
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+    /* Smooth and natural interactive tilt wrapper */
+    .tilt-wrapper {
+      perspective: 1200px;
+    }
+    .tilt-card {
+      transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    /* Neo-brutalist pop animations on interactive elements */
+    .btn-pop:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #0D0D11;
+    }
+  </style>
+<!-- END: Custom Theme & Grid Styles -->
+</head>
+<body class="font-sans antialiased text-[#0D0D11] bg-white selection:bg-black selection:text-white" data-theme="light">
+<!-- BEGIN: Top Dominant Hero Section -->
+<!-- Default Light Mode: Dominant Red-Orange (#FF3A1E). Dark Mode: Dominant SAKURA PINK (#FFAEC0) covering 90%+ of top fold! -->
+<header class="relative w-full min-h-[92vh] flex flex-col justify-between bg-[#FF3A1E] border-b-4 border-[#0D0D11] bg-grid-tech overflow-hidden" data-purpose="hero-container" id="heroSection">
+<div>
+<!-- Top Utility Decorative Accent Bar -->
+<div class="w-full bg-[#0D0D11] text-[#FFFFFF] text-xs font-mono py-1.5 px-4 flex justify-between items-center tracking-wider font-semibold border-b-2 border-black flex-shrink-0">
+<div class="flex items-center gap-3">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-[#A7F3D0] border-2 border-black animate-pulse"></span>
+<span>CAMPUS &amp; OFF-CAMPUS PLACEMENT CYCLE: 2025 ACTIVE</span>
+<span class="hidden md:inline text-white/50">|</span>
+<span class="hidden md:inline">ROUND READINESS: OPTIMAL RETENTION LEVEL</span>
+</div>
+<div class="flex items-center gap-4">
+<span>BLIND-75 + NC150: <strong class="text-[#FFE600]">142/150 VERIFIED</strong></span>
+<span class="hidden sm:inline">NEXT MOCK INTERVIEW: TODAY 20:00 IST</span>
+</div>
+</div>
+<!-- BEGIN: Main Navigation Bar -->
+<nav aria-label="Main Navigation" class="max-w-[1400px] mx-auto px-6 py-5 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group flex-shrink-0" data-purpose="site-brand" href="#">
+<div class="w-11 h-11 bg-black rounded-lg flex items-center justify-center border-2 border-black shadow-neo-sm transform group-hover:-translate-y-0.5 transition-transform flex-shrink-0">
+<span class="font-mono font-black text-xl text-white">P:</span>
+</div>
+<div class="flex flex-col">
+<span class="font-black text-2xl tracking-tighter leading-none text-black">PLACEMENT<span class="text-white font-mono" id="brandSubtext">.PREP</span></span>
+<span class="font-mono text-[10px] tracking-widest text-black/85 uppercase font-bold mt-0.5">Interview &amp; Pattern Tracker</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<div class="hidden xl:flex items-center space-x-7 font-mono text-sm font-black text-black flex-shrink-0" data-purpose="nav-links">
+<a class="hover:underline underline-offset-4 decoration-2" href="#how-it-works">How It Works</a>
+<a class="hover:underline underline-offset-4 decoration-2" href="#terminal-section">Recent Logs</a>
+<a class="hover:underline underline-offset-4 decoration-2" href="#quick-log">Pattern Breakdown</a>
+<a class="hover:underline underline-offset-4 decoration-2" href="#terminal-section">Revision Queue (8 Due)</a>
+</div>
+<!-- Action Buttons & Theme Toggle -->
+<div class="flex items-center gap-3 flex-shrink-0" data-purpose="nav-controls">
+<!-- Fixed-width compact minimal theme toggle: NEVER distorts or shifts header -->
+<button aria-label="Toggle Theme Mode" class="w-10 h-10 flex-shrink-0 bg-white border-2 border-black rounded-lg flex items-center justify-center text-black shadow-neo-sm hover:bg-neutral-100 transition active:translate-y-0.5 cursor-pointer select-none" id="theme-toggle-btn" onclick="window.toggleTheme()" title="Toggle theme (Light / Sakura Pink)" type="button">
+<span class="flex items-center justify-center pointer-events-none" id="themeToggleIcon">
+<svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+</span>
+</button>
+<!-- Quick Log Action Button -->
+<a class="inline-flex items-center justify-center h-10 px-5 flex-shrink-0 bg-black text-white font-mono text-xs uppercase tracking-wider font-extrabold border-2 border-black rounded-lg shadow-neo-sm hover:-translate-y-0.5 hover:shadow-neo transition active:translate-y-0 whitespace-nowrap" href="#quick-log">
+          + Log Solved Problem
+        </a>
+</div>
+</nav>
+<!-- END: Main Navigation Bar -->
+<!-- BEGIN: Hero Two-Column Content Block -->
+<div class="max-w-[1400px] mx-auto px-6 pt-4 pb-16 lg:pt-8 lg:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Left Column: Redesigned Disciplined Black/White/Mint Interactive Tracker Card -->
+<div class="lg:col-span-6 flex justify-center lg:justify-start tilt-wrapper" data-purpose="hero-graphic-emblem" id="tiltContainer">
+<div class="tilt-card relative w-full max-w-[520px]" id="tiltCard">
+<!-- Outer Deck Card: Crisp Snowy White with Heavy Black Borders & Shadow -->
+<div class="bg-white border-4 border-black p-6 sm:p-7 rounded-2xl shadow-neo relative overflow-hidden text-black select-none">
+<!-- Decorative Terminal Corner Screws -->
+<div class="absolute top-2.5 left-2.5 w-2.5 h-2.5 rounded-full border-2 border-black bg-neutral-200"></div>
+<div class="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full border-2 border-black bg-neutral-200"></div>
+<div class="absolute bottom-2.5 left-2.5 w-2.5 h-2.5 rounded-full border-2 border-black bg-neutral-200"></div>
+<div class="absolute bottom-2.5 right-2.5 w-2.5 h-2.5 rounded-full border-2 border-black bg-neutral-200"></div>
+<!-- Micro Controller Header & Interactive Mode Carousel Switcher -->
+<div class="flex items-center justify-between pb-3.5 border-b-2 border-neutral-200 mb-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-black border border-black rounded-full inline-block"></span>
+<span class="w-3 h-3 bg-[#A7F3D0] border-2 border-black rounded-full inline-block"></span>
+<span class="w-3 h-3 bg-neutral-300 border border-black rounded-full inline-block"></span>
+<span class="font-mono text-xs font-black tracking-widest text-black uppercase ml-1" id="carouselBadgeTag">ACTIVE // PLACEMENT SPRINT '25</span>
+</div>
+<!-- Mode Switcher Carousel Controls -->
+<div class="flex items-center gap-1.5 font-mono">
+<button aria-label="Previous Slide" class="w-6 h-6 rounded bg-black text-white hover:bg-neutral-800 flex items-center justify-center text-xs font-black border border-black active:scale-95 transition cursor-pointer" id="prevSlideBtn">‹</button>
+<span class="text-[11px] font-black bg-black text-[#A7F3D0] px-2 py-0.5 rounded border-2 border-black" id="slideIndexIndicator">01/03</span>
+<button aria-label="Next Slide" class="w-6 h-6 rounded bg-black text-white hover:bg-neutral-800 flex items-center justify-center text-xs font-black border border-black active:scale-95 transition cursor-pointer" id="nextSlideBtn">›</button>
+</div>
+</div>
+<!-- Inner Headline Panel: Pitch Black with Mint Accents -->
+<div class="bg-[#0D0D11] text-white border-4 border-black p-5 rounded-xl shadow-neo text-center relative group">
+<!-- Mode Tag Pill with Pop micro-interaction -->
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#A7F3D0] text-black font-mono text-[10px] tracking-widest px-3 py-1 uppercase font-black rounded-full border-2 border-black shadow-neo-sm flex items-center gap-1.5 cursor-pointer hover:scale-105 active:scale-95 transition-transform" id="topPillStatus">
+<span class="w-1.5 h-1.5 rounded-full bg-black animate-pulse"></span>
+<span id="badgeSubtitle">TIER-1 INTERVIEW READINESS</span>
+</div>
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none text-white mt-2">
+                PLACEMENT<br/>
+<span class="text-[#A7F3D0]">SPRINT '25</span>
+</h1>
+<!-- Category Chips Row in disciplined Mint & Black/White -->
+<div class="mt-4 flex items-center justify-center gap-2 flex-wrap">
+<button class="bg-[#A7F3D0] text-black font-mono font-black text-xs px-3 py-1 rounded-md border-2 border-black shadow-neo-sm hover:-translate-y-0.5 active:translate-y-0 transition cursor-pointer" id="pillNeetcode">
+                  142/150 SOLVED
+                </button>
+<button class="bg-white text-black font-mono font-black text-xs px-3 py-1 rounded-md border-2 border-black shadow-neo-sm hover:-translate-y-0.5 active:translate-y-0 transition cursor-pointer" id="pillComplexity">
+                  14 PATTERNS
+                </button>
+<button class="bg-black text-[#A7F3D0] font-mono font-bold text-xs px-3 py-1 rounded-md border-2 border-black shadow-neo-sm hover:-translate-y-0.5 active:translate-y-0 transition cursor-pointer" id="pillRevision">
+                  8 REVIEWS DUE
+                </button>
+</div>
+</div>
+<!-- Dynamic Interactive Slide Contents (Slide 1: Sprint Progress, Slide 2: Topic Mastery, Slide 3: Spaced Retention) -->
+<div class="mt-4" id="carouselSlideContainer">
+<!-- Slide 1 (Default): SPRINT PROGRESS & VELOCITY -->
+<div class="grid grid-cols-3 gap-2.5 text-center font-mono transition-opacity duration-200" id="slideContent">
+<div class="bg-neutral-50 p-2.5 rounded-xl border-2 border-black shadow-neo-sm hover:scale-[1.02] transition cursor-pointer">
+<div class="text-[10px] text-neutral-600 font-black uppercase" id="metricTitle1">TOTAL SOLVED</div>
+<div class="text-2xl font-black text-black" id="metricVal1">284</div>
+</div>
+<div class="bg-neutral-50 p-2.5 rounded-xl border-2 border-black shadow-neo-sm hover:scale-[1.02] transition cursor-pointer">
+<div class="text-[10px] text-neutral-600 font-black uppercase" id="metricTitle2">ACTIVE STREAK</div>
+<div class="text-2xl font-black text-black" id="metricVal2">42d</div>
+</div>
+<div class="bg-neutral-50 p-2.5 rounded-xl border-2 border-black shadow-neo-sm hover:scale-[1.02] transition cursor-pointer">
+<div class="text-[10px] text-neutral-600 font-black uppercase" id="metricTitle3">MOCK ACCURACY</div>
+<div class="text-2xl font-black text-[#059669]" id="metricVal3">89%</div>
+</div>
+</div>
+</div>
+<!-- Carousel Dot Selectors -->
+<div class="flex items-center justify-center gap-2 mt-4">
+<button aria-label="Jump to Slide 1" class="w-3 h-3 rounded-full border-2 border-black bg-black transition-all cursor-pointer" id="dot0"></button>
+<button aria-label="Jump to Slide 2" class="w-3 h-3 rounded-full border-2 border-black bg-white hover:bg-neutral-200 transition-all cursor-pointer" id="dot1"></button>
+<button aria-label="Jump to Slide 3" class="w-3 h-3 rounded-full border-2 border-black bg-white hover:bg-neutral-200 transition-all cursor-pointer" id="dot2"></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Professional Placement Copy & CTA -->
+<div class="lg:col-span-6 text-black space-y-6" data-purpose="hero-copy">
+<!-- Live Status Tag Badge -->
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-[#A7F3D0] rounded-lg border-2 border-black font-mono text-xs font-black uppercase tracking-wider shadow-neo-sm">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-[#A7F3D0] border-2 border-black animate-ping"></span>
+          DSA INTERVIEW PREPARATION OS
+        </div>
+<!-- Headline: Clear, Direct, Placement-Focused -->
+<h2 class="text-4xl sm:text-5xl xl:text-6xl font-black tracking-tight leading-[1.05] uppercase">
+          ENGINEER YOUR <br/>
+<span class="underline decoration-4 underline-offset-4 decoration-black">PLACEMENT ADVANTAGE</span>.
+        </h2>
+<!-- Subtitle -->
+<p class="font-bold text-lg sm:text-xl text-black/95 max-w-xl leading-relaxed">
+          Systematic tracking for coding rounds, interview patterns, and spaced revision cycles. Eliminate blind spots and conquer campus technical interviews with confidence.
+        </p>
+<!-- CTA Buttons -->
+<div class="pt-2 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-mono font-black text-sm uppercase tracking-wider border-2 border-black rounded-lg shadow-neo hover:-translate-y-1 hover:shadow-neo-white transition active:translate-y-0" href="#quick-log">
+            Start Logging Today →
+          </a>
+<a class="inline-flex items-center justify-center px-8 py-4 bg-white text-black font-mono font-black text-sm uppercase tracking-wider border-2 border-black rounded-lg shadow-neo hover:-translate-y-1 transition active:translate-y-0" href="#terminal-section">
+            View Problem Ledger [ $ ]
+          </a>
+</div>
+<!-- Micro status pills: Mint Green chip with pitch black border -->
+<div class="pt-4 flex flex-wrap items-center gap-3 font-mono text-xs font-black">
+<span class="flex items-center gap-1.5 px-3 py-1.5 bg-[#A7F3D0] text-black rounded-md border-2 border-black shadow-neo-sm">
+<svg class="w-4 h-4 text-black stroke-[3]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            No vanity metrics
+          </span>
+<span class="flex items-center gap-1.5 px-3 py-1.5 bg-[#A7F3D0] text-black rounded-md border-2 border-black shadow-neo-sm">
+<svg class="w-4 h-4 text-black stroke-[3]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Spaced Retentions (Day 3, 7, 21)
+          </span>
+<span class="flex items-center gap-1.5 px-3 py-1.5 bg-[#A7F3D0] text-black rounded-md border-2 border-black shadow-neo-sm">
+<svg class="w-4 h-4 text-black stroke-[3]" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Edge-case gotchas logged
+          </span>
+</div>
+</div>
+</div>
+<!-- END: Hero Two-Column Content Block -->
+</div>
+</header>
+<!-- END: Top Dominant Hero Section -->
+<!-- BEGIN: Secondary Lower Section: How The Tracker Works -->
+<!-- Transitions to Crisp Snowy White in Light Mode, Pitch Black in Dark Mode -->
+<section class="py-20 px-6 bg-[#FFFFFF] border-b-2 border-black" data-purpose="what-you-need-to-know" id="how-it-works">
+<div class="max-w-[1400px] mx-auto">
+<!-- Section Title Header -->
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+<div class="inline-block font-mono text-xs font-black uppercase tracking-widest px-3 py-1 bg-black text-[#A7F3D0] rounded-md border-2 border-black shadow-neo-sm">
+          THE PROTOCOL
+        </div>
+<h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-black">
+          How The Tracker Works
+        </h3>
+<p class="font-mono text-sm text-neutral-600 subtitle-text">
+          Stop solving questions aimlessly without retention. Track pattern mastery, edge-case traps, and real-time complexity breakdowns.
+        </p>
+</div>
+<!-- 3-Column Desktop Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 01: Log Solved Problems -->
+<article class="bg-[#FFFFFF] p-8 border-2 border-black rounded-xl shadow-neo relative group hover:-translate-y-1 transition duration-200">
+<div class="w-14 h-14 bg-[#A7F3D0] border-2 border-black rounded-lg flex items-center justify-center mb-6 shadow-neo-sm">
+<!-- Icon: Terminal/Code -->
+<svg class="w-7 h-7 text-black stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="font-mono text-xs font-black text-black uppercase tracking-wider mb-1">01 / LOGGING DISCIPLINE</div>
+<h4 class="text-2xl font-black text-black uppercase mb-3">Log Solved Questions</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-4">
+            Record every question solved across LeetCode, Codeforces, or NeetCode. Store actual time elapsed, brute-force vs optimal time/space complexity, and your custom test case edge-cases.
+          </p>
+<div class="pt-3 border-t-2 border-dashed border-neutral-300 font-mono text-xs font-bold text-neutral-500">
+            Target: &gt;= 3 PRs/problems logged daily
+          </div>
+</article>
+<!-- Card 02: Revise Gotchas & Spaced Repetition -->
+<article class="bg-[#FFFFFF] p-8 border-2 border-black rounded-xl shadow-neo relative group hover:-translate-y-1 transition duration-200">
+<div class="w-14 h-14 bg-white border-2 border-black rounded-lg flex items-center justify-center mb-6 shadow-neo-sm">
+<!-- Icon: Bell / Spaced Repetition -->
+<svg class="w-7 h-7 text-black stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="font-mono text-xs font-black text-black uppercase tracking-wider mb-1">02 / RETENTION ENGINE</div>
+<h4 class="text-2xl font-black text-black uppercase mb-3">Revise Key Gotchas</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-4">
+            Automated spaced-retention scheduler prompts you on Day 3, 7, and 21. Don't write code from scratch again—re-derive the intuition and inspect your logged traps in 90 seconds.
+          </p>
+<div class="pt-3 border-t-2 border-dashed border-neutral-300 font-mono text-xs font-bold text-neutral-500">
+            Intervals: Day 3 → Day 7 → Day 21
+          </div>
+</article>
+<!-- Card 03: Topic & Pattern Clusters -->
+<article class="bg-[#FFFFFF] p-8 border-2 border-black rounded-xl shadow-neo relative group hover:-translate-y-1 transition duration-200">
+<div class="w-14 h-14 bg-[#A7F3D0] border-2 border-black rounded-lg flex items-center justify-center mb-6 shadow-neo-sm">
+<!-- Icon: Hierarchy / Graph -->
+<svg class="w-7 h-7 text-black stroke-[2.5]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM9 20a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<div class="font-mono text-xs font-black text-black uppercase tracking-wider mb-1">03 / PATTERN RECOGNITION</div>
+<h4 class="text-2xl font-black text-black uppercase mb-3">Topic &amp; Pattern Clusters</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-4">
+            Group algorithms into 14 core patterns: Two Pointers, Monotonic Stack, Sliding Window, Topological Sort, DP State Reduction. Master templates instead of memorizing 500 tasks.
+          </p>
+<div class="pt-3 border-t-2 border-dashed border-neutral-300 font-mono text-xs font-bold text-neutral-500">
+            Categorization: 14 Core Blueprints
+          </div>
+</article>
+</div>
+</div>
+</section>
+<!-- END: Secondary Lower Section: How The Tracker Works -->
+<!-- BEGIN: Terminal Problem Log Section (Pitch Black in dark theme with solid black outlines on pastel mint tags) -->
+<section class="py-20 px-6 bg-[#FAFAFA]" data-purpose="logged-problems-terminal" id="terminal-section">
+<div class="max-w-[1400px] mx-auto">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b-2 border-black gap-4">
+<div>
+<div class="font-mono text-xs font-extrabold uppercase text-[#FF3A1E] tracking-widest mb-1">
+            // LIVE REPOSITORY FEED
+          </div>
+<h3 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-black">
+            Logged Interview Problems Terminal
+          </h3>
+</div>
+<div class="font-mono text-xs text-neutral-500">
+          Showing 4 of 284 resolved | Commit Hash: <span class="text-black font-bold">#a89f92</span>
+</div>
+</div>
+<!-- Main Layout: 8 cols Terminal Console + 4 cols Fast Logging Box -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left: macOS/Linux Terminal Emulator (8 Columns) -->
+<div class="lg:col-span-8 bg-[#0D0D11] border-2 border-black rounded-xl shadow-neo overflow-hidden" data-purpose="code-terminal">
+<!-- Terminal Titlebar -->
+<div class="bg-[#181822] px-4 py-3 border-b-2 border-neutral-800 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block border border-black/40"></span>
+<span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block border border-black/40"></span>
+<span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block border border-black/40"></span>
+<span class="font-mono text-xs text-neutral-400 font-bold ml-2">bash - $ cat recent_interview_logs.log</span>
+</div>
+<span class="font-mono text-[11px] bg-[#A7F3D0] text-black px-2 py-0.5 rounded font-black border-2 border-black">UTF-8 // READY</span>
+</div>
+<!-- Terminal Content Body -->
+<div class="p-6 font-mono text-sm space-y-6 overflow-x-auto text-neutral-200">
+<div class="text-neutral-400 text-xs pb-2 border-b border-neutral-800">
+              # Showing latest interview logs and recorded GOTCHA intuition traps:
+            </div>
+<!-- Problem 01 -->
+<div class="p-4 bg-[#14141D] rounded-lg border-2 border-neutral-800 hover:border-[#A7F3D0] transition">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="text-white font-black">#001</span>
+<span class="text-white font-black text-base hover:underline cursor-pointer">Two Sum</span>
+<!-- Green Chip with solid 2px black border -->
+<span class="px-2 py-0.5 bg-[#A7F3D0] text-black font-black text-xs rounded border-2 border-black shadow-neo-sm">EASY</span>
+</div>
+<div class="text-xs text-neutral-400 font-semibold">
+                  Solved in <strong class="text-white">7 mins</strong> | Time: <strong class="text-[#A7F3D0]">O(N)</strong>
+</div>
+</div>
+<p class="text-xs text-neutral-300 leading-relaxed pl-2 border-l-2 border-[#A7F3D0]">
+<strong class="text-[#A7F3D0]">&gt;&gt; GOTCHA:</strong> Do not pre-populate entire Hash Table. Insert current element as you traverse to prevent self-pairing when (target - nums[i] == nums[i]).
+              </p>
+<div class="mt-2.5 flex items-center gap-2 text-[11px]">
+<span class="bg-black text-[#A7F3D0] px-2 py-0.5 rounded border-2 border-black font-bold">Tag: Hash Table</span>
+<span class="bg-[#A7F3D0] text-black px-2 py-0.5 rounded border-2 border-black font-black">Revision: Day 7 Passed</span>
+</div>
+</div>
+<!-- Problem 02 -->
+<div class="p-4 bg-[#14141D] rounded-lg border-2 border-neutral-800 hover:border-[#A7F3D0] transition">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="text-white font-black">#003</span>
+<span class="text-white font-black text-base hover:underline cursor-pointer">Longest Substring Without Repeating</span>
+<span class="px-2 py-0.5 bg-yellow-400 text-black font-black text-xs rounded border-2 border-black shadow-neo-sm">MEDIUM</span>
+</div>
+<div class="text-xs text-neutral-400 font-semibold">
+                  Solved in <strong class="text-white">16 mins</strong> | Time: <strong class="text-[#A7F3D0]">O(N)</strong>
+</div>
+</div>
+<p class="text-xs text-neutral-300 leading-relaxed pl-2 border-l-2 border-yellow-400">
+<strong class="text-yellow-400">&gt;&gt; GOTCHA:</strong> When updating window start pointer `left`, use `Math.max(left, lastSeenIdx + 1)` rather than just jumping blindly, otherwise `left` can inadvertently retreat backwards!
+              </p>
+<div class="mt-2.5 flex items-center gap-2 text-[11px]">
+<span class="bg-black text-neutral-300 px-2 py-0.5 rounded border-2 border-black font-bold">Tag: Sliding Window</span>
+<span class="bg-yellow-400 text-black px-2 py-0.5 rounded border-2 border-black font-black">Revision: Due Tomorrow</span>
+</div>
+</div>
+<!-- Problem 03 -->
+<div class="p-4 bg-[#14141D] rounded-lg border-2 border-neutral-800 hover:border-[#A7F3D0] transition">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="text-white font-black">#042</span>
+<span class="text-white font-black text-base hover:underline cursor-pointer">Trapping Rain Water</span>
+<span class="px-2 py-0.5 bg-white text-black font-black text-xs rounded border-2 border-black shadow-neo-sm">HARD</span>
+</div>
+<div class="text-xs text-neutral-400 font-semibold">
+                  Solved in <strong class="text-white">28 mins</strong> | Time: <strong class="text-[#A7F3D0]">O(N)</strong> / Space: <strong class="text-[#A7F3D0]">O(1)</strong>
+</div>
+</div>
+<p class="text-xs text-neutral-300 leading-relaxed pl-2 border-l-2 border-[#A7F3D0]">
+<strong class="text-[#A7F3D0]">&gt;&gt; GOTCHA:</strong> Two-pointer approach works because water height at index `i` is bounded strictly by `min(maxLeft, maxRight)`. You only need to increment the side with the smaller max barrier.
+              </p>
+<div class="mt-2.5 flex items-center gap-2 text-[11px]">
+<span class="bg-black text-neutral-300 px-2 py-0.5 rounded border-2 border-black font-bold">Tag: Two Pointers</span>
+<span class="bg-[#A7F3D0] text-black px-2 py-0.5 rounded border-2 border-black font-black">Revision: In 4 Days</span>
+</div>
+</div>
+<!-- Problem 04 -->
+<div class="p-4 bg-[#14141D] rounded-lg border-2 border-neutral-800 hover:border-[#A7F3D0] transition">
+<div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-3">
+<span class="text-white font-black">#207</span>
+<span class="text-white font-black text-base hover:underline cursor-pointer">Course Schedule (Cycle Detect)</span>
+<span class="px-2 py-0.5 bg-yellow-400 text-black font-black text-xs rounded border-2 border-black shadow-neo-sm">MEDIUM</span>
+</div>
+<div class="text-xs text-neutral-400 font-semibold">
+                  Solved in <strong class="text-white">19 mins</strong> | Time: <strong class="text-[#A7F3D0]">O(V + E)</strong>
+</div>
+</div>
+<p class="text-xs text-neutral-300 leading-relaxed pl-2 border-l-2 border-yellow-400">
+<strong class="text-yellow-400">&gt;&gt; GOTCHA:</strong> Kahn's Algorithm (BFS with In-degree count) is cleaner than 3-state DFS. If `visitedCourseCount != numCourses` at queue exhaustion, a directed cycle exists.
+              </p>
+<div class="mt-2.5 flex items-center gap-2 text-[11px]">
+<span class="bg-black text-neutral-300 px-2 py-0.5 rounded border-2 border-black font-bold">Tag: Graph / Topological Sort</span>
+<span class="bg-[#A7F3D0] text-black px-2 py-0.5 rounded border-2 border-black font-black">Revision: Due in 12 Days</span>
+</div>
+</div>
+</div>
+<!-- Terminal Status Footer -->
+<div class="bg-[#12121A] px-6 py-3 border-t-2 border-neutral-800 flex items-center justify-between text-xs font-mono">
+<span class="text-neutral-400">&gt;&gt; Execution time: 1.2ms | Total DB Size: 2.1 MB</span>
+<a class="text-[#A7F3D0] hover:underline font-black" href="#">Export all to Anki / Markdown →</a>
+</div>
+</div>
+<!-- Right: Topic & Pattern Breakdown & Fast Add Form Panel (4 Columns) -->
+<div class="lg:col-span-4 space-y-6" data-purpose="quick-log-side-panel" id="quick-log">
+<!-- Topic & Pattern Breakdown Card -->
+<div class="bg-white p-6 border-2 border-black rounded-xl shadow-neo">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-black text-lg uppercase tracking-tight text-black">Topic &amp; Pattern Breakdown</h4>
+<!-- Green Chip with solid black border -->
+<span class="font-mono text-xs bg-[#A7F3D0] text-black px-2.5 py-0.5 rounded-md font-black border-2 border-black shadow-neo-sm">14 / 14</span>
+</div>
+<div class="space-y-3 font-mono text-xs">
+<div>
+<div class="flex justify-between font-bold mb-1">
+<span>Arrays &amp; Two Pointers</span>
+<span class="text-black font-black">38/40 (95%)</span>
+</div>
+<div class="w-full h-3 bg-neutral-200 rounded overflow-hidden border-2 border-black">
+<div class="h-full bg-black w-[95%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-bold mb-1">
+<span>Sliding Window</span>
+<span class="text-black font-black">24/25 (96%)</span>
+</div>
+<div class="w-full h-3 bg-neutral-200 rounded overflow-hidden border-2 border-black">
+<div class="h-full bg-black w-[96%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-bold mb-1">
+<span>Trees &amp; Graphs</span>
+<span class="text-black font-black">45/50 (90%)</span>
+</div>
+<div class="w-full h-3 bg-neutral-200 rounded overflow-hidden border-2 border-black">
+<div class="h-full bg-[#059669] w-[90%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-bold mb-1">
+<span>Dynamic Programming</span>
+<span class="text-black font-black">29/45 (64%)</span>
+</div>
+<div class="w-full h-3 bg-neutral-200 rounded overflow-hidden border-2 border-black">
+<div class="h-full bg-yellow-400 w-[64%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Fast Add Interactive Form Box -->
+<div class="bg-neutral-50 p-6 border-2 border-black rounded-xl shadow-neo">
+<h4 class="font-black text-lg uppercase tracking-tight text-black mb-2">
+              Fast Log Entry
+            </h4>
+<p class="font-mono text-xs text-neutral-600 mb-4">
+              Commit a new solved question to trigger spaced repetition alerts.
+            </p>
+<form class="space-y-3 font-mono text-xs" id="quickProblemForm" onsubmit="event.preventDefault(); alert('Problem logged to local storage cache!');">
+<div>
+<label class="block font-black mb-1 text-black">Problem Title / URL</label>
+<input class="w-full p-2.5 border-2 border-black bg-white text-xs rounded-lg focus:ring-0 focus:border-black" placeholder="e.g. 15. 3Sum" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block font-black mb-1 text-black">Pattern</label>
+<select class="w-full p-2.5 border-2 border-black bg-white text-xs rounded-lg focus:ring-0">
+<option>Two Pointers</option>
+<option>Sliding Window</option>
+<option>Binary Search</option>
+<option>Dynamic Prog</option>
+</select>
+</div>
+<div>
+<label class="block font-black mb-1 text-black">Difficulty</label>
+<select class="w-full p-2.5 border-2 border-black bg-white text-xs rounded-lg focus:ring-0">
+<option>Medium</option>
+<option>Easy</option>
+<option>Hard</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-black mb-1 text-black">Key Intuition Trap (Gotcha)</label>
+<textarea class="w-full p-2 border-2 border-black bg-white text-xs rounded-lg focus:ring-0" placeholder="What tripped you up? Edge cases..." rows="2"></textarea>
+</div>
+<button class="w-full py-3 bg-black text-[#A7F3D0] font-black uppercase text-xs tracking-wider border-2 border-black rounded-lg shadow-neo-sm hover:translate-y-0.5 transition cursor-pointer" type="submit">
+                + Commit Problem to Ledger
+              </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Terminal Problem Log Section -->
+<!-- BEGIN: Site Footer -->
+<footer class="bg-black text-white border-t-4 border-black py-12 px-6 font-mono text-xs" data-purpose="site-footer">
+<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="w-9 h-9 rounded-lg bg-white text-black flex items-center justify-center font-black text-sm border-2 border-black">P:</span>
+<div>
+<div class="font-black text-sm tracking-tight font-sans">PLACEMENT PREP TRACKER © 2025</div>
+<div class="text-neutral-400 text-[11px]">Systematic tracking for coding rounds, interview patterns, and revision cycles.</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-6 font-bold text-neutral-300">
+<a class="hover:text-[#A7F3D0] transition" href="#how-it-works">How It Works</a>
+<a class="hover:text-[#A7F3D0] transition" href="#terminal-section">Problem Feed</a>
+<a class="hover:text-[#A7F3D0] transition" href="#">Pattern Clusters</a>
+<a class="hover:text-[#A7F3D0] transition" href="#">GitHub Export</a>
+<a class="text-[#A7F3D0] hover:underline font-black cursor-pointer" href="javascript:void(0)" id="footerThemeToggle" onclick="window.toggleTheme()">Switch Theme (Sakura)</a>
+</div>
+</div>
+</footer>
+<!-- END: Site Footer -->
+<!-- BEGIN: JavaScript Logic for Theme Switcher, Smooth Natural Tilt & Slides -->
+<script data-purpose="interactive-scripts">
+    // --- 1. ROBUST THEME TOGGLE (Default: Red-Orange Light Mode) ---
+    const MOON_SVG = `<svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+    const SUN_SVG = `<svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+
+    window.toggleTheme = function() {
+      const body = document.body;
+      const html = document.documentElement;
+      const iconContainer = document.getElementById('themeToggleIcon');
+      const footerToggle = document.getElementById('footerThemeToggle');
+      const brandSubtext = document.getElementById('brandSubtext');
+
+      const isSakura = body.classList.contains('theme-sakura') || body.dataset.theme === 'sakura';
+
+      if (isSakura) {
+        // Switch to Light (Default: Red-Orange)
+        body.classList.remove('theme-sakura', 'dark');
+        html.classList.remove('theme-sakura', 'dark');
+        body.dataset.theme = 'light';
+        html.dataset.theme = 'light';
+        if (iconContainer) iconContainer.innerHTML = MOON_SVG;
+        if (footerToggle) footerToggle.textContent = 'Switch Theme (Sakura)';
+        if (brandSubtext) {
+          brandSubtext.classList.remove('text-black');
+          brandSubtext.classList.add('text-white');
+        }
+      } else {
+        // Switch to Sakura Dark
+        body.classList.add('theme-sakura', 'dark');
+        html.classList.add('theme-sakura', 'dark');
+        body.dataset.theme = 'sakura';
+        html.dataset.theme = 'sakura';
+        if (iconContainer) iconContainer.innerHTML = SUN_SVG;
+        if (footerToggle) footerToggle.textContent = 'Switch Theme (Default Red)';
+        if (brandSubtext) {
+          brandSubtext.classList.remove('text-white');
+          brandSubtext.classList.add('text-black');
+        }
+      }
+    };
+
+    // Ensure pristine light mode on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.remove('theme-sakura', 'dark');
+      document.documentElement.classList.remove('theme-sakura', 'dark');
+      document.body.dataset.theme = 'light';
+      document.documentElement.dataset.theme = 'light';
+      const iconContainer = document.getElementById('themeToggleIcon');
+      if (iconContainer) iconContainer.innerHTML = MOON_SVG;
+    });
+
+    // --- 2. SMOOTH & NATURAL TILT INTERACTION FOR TRACKER CARD ---
+    const tiltContainer = document.getElementById('tiltContainer');
+    const tiltCard = document.getElementById('tiltCard');
+
+    if (tiltContainer && tiltCard) {
+      let isHovering = false;
+      let targetRotateX = 0;
+      let targetRotateY = 0;
+      let currentRotateX = 0;
+      let currentRotateY = 0;
+      let rafId = null;
+
+      function updateTilt() {
+        currentRotateX += (targetRotateX - currentRotateX) * 0.12;
+        currentRotateY += (targetRotateY - currentRotateY) * 0.12;
+
+        if (isHovering || Math.abs(targetRotateX - currentRotateX) > 0.01 || Math.abs(targetRotateY - currentRotateY) > 0.01) {
+          tiltCard.style.transform = `perspective(900px) rotateX(${currentRotateX.toFixed(2)}deg) rotateY(${currentRotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+          const shadowX = (-currentRotateY * 0.7 + 4).toFixed(1);
+          const shadowY = (currentRotateX * 0.7 + 4).toFixed(1);
+          tiltCard.style.boxShadow = `${shadowX}px ${shadowY}px 0px 0px #0D0D11`;
+          rafId = requestAnimationFrame(updateTilt);
+        } else {
+          tiltCard.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          tiltCard.style.boxShadow = '4px 4px 0px 0px #0D0D11';
+          rafId = null;
+        }
+      }
+
+      tiltContainer.addEventListener('mousemove', (e) => {
+        isHovering = true;
+        const rect = tiltContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        targetRotateX = ((centerY - y) / centerY) * 7;
+        targetRotateY = ((x - centerX) / centerX) * 7;
+
+        if (!rafId) {
+          rafId = requestAnimationFrame(updateTilt);
+        }
+      });
+
+      tiltContainer.addEventListener('mouseleave', () => {
+        isHovering = false;
+        targetRotateX = 0;
+        targetRotateY = 0;
+        if (!rafId) {
+          rafId = requestAnimationFrame(updateTilt);
+        }
+      });
+    }
+
+    // --- 3. DYNAMIC INTERACTIVE SLIDES / CAROUSEL INSIDE TRACKER CARD ---
+    const slidesData = [
+      {
+        tag: "ACTIVE // PLACEMENT SPRINT '25",
+        subtitle: "TIER-1 INTERVIEW READINESS",
+        title1: "TOTAL SOLVED", val1: "284",
+        title2: "ACTIVE STREAK", val2: "42d",
+        title3: "MOCK ACCURACY", val3: "89%"
+      },
+      {
+        tag: "SYSTEM // TOPIC MASTERY",
+        subtitle: "COVERAGE: 14 PATTERNS",
+        title1: "NEETCODE 150", val1: "142/150",
+        title2: "AVG SOLVE TIME", val2: "14m",
+        title3: "HARD QUESTIONS", val3: "36"
+      },
+      {
+        tag: "INTERVAL // REVISION QUEUE",
+        subtitle: "SPACED REPETITION ENGINE",
+        title1: "DAY 3 REVIEWS", val1: "3 Due",
+        title2: "DAY 7 REVIEWS", val2: "5 Due",
+        title3: "DAY 21 RETENTION", val3: "96%"
+      }
+    ];
+
+    let currentSlide = 0;
+    const badgeTag = document.getElementById('carouselBadgeTag');
+    const badgeSubtitle = document.getElementById('badgeSubtitle');
+    const metricTitle1 = document.getElementById('metricTitle1');
+    const metricVal1 = document.getElementById('metricVal1');
+    const metricTitle2 = document.getElementById('metricTitle2');
+    const metricVal2 = document.getElementById('metricVal2');
+    const metricTitle3 = document.getElementById('metricTitle3');
+    const metricVal3 = document.getElementById('metricVal3');
+    const slideIndicator = document.getElementById('slideIndexIndicator');
+    const dots = [document.getElementById('dot0'), document.getElementById('dot1'), document.getElementById('dot2')];
+
+    function renderSlide(index) {
+      currentSlide = ((index % slidesData.length) + slidesData.length) % slidesData.length;
+      const data = slidesData[currentSlide];
+
+      if (badgeTag) badgeTag.innerText = data.tag;
+      if (badgeSubtitle) badgeSubtitle.innerText = data.subtitle;
+      if (metricTitle1) metricTitle1.innerText = data.title1;
+      if (metricVal1) metricVal1.innerText = data.val1;
+      if (metricTitle2) metricTitle2.innerText = data.title2;
+      if (metricVal2) metricVal2.innerText = data.val2;
+      if (metricTitle3) metricTitle3.innerText = data.title3;
+      if (metricVal3) metricVal3.innerText = data.val3;
+      if (slideIndicator) slideIndicator.innerText = `0${currentSlide + 1}/03`;
+
+      dots.forEach((dot, idx) => {
+        if (dot) {
+          if (idx === currentSlide) {
+            dot.classList.remove('bg-white');
+            dot.classList.add('bg-black');
+          } else {
+            dot.classList.remove('bg-black');
+            dot.classList.add('bg-white');
+          }
+        }
+      });
+    }
+
+    const prevBtn = document.getElementById('prevSlideBtn');
+    const nextBtn = document.getElementById('nextSlideBtn');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderSlide(currentSlide - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderSlide(currentSlide + 1);
+      });
+    }
+
+    dots.forEach((dot, idx) => {
+      if (dot) {
+        dot.addEventListener('click', (e) => {
+          e.stopPropagation();
+          renderSlide(idx);
+        });
+      }
+    });
+
+    // Tactile micro-interactions for interactive chips
+    const interactivePills = [
+      document.getElementById('pillNeetcode'),
+      document.getElementById('pillComplexity'),
+      document.getElementById('pillRevision'),
+      document.getElementById('topPillStatus')
+    ];
+
+    interactivePills.forEach(pill => {
+      if (pill) {
+        pill.addEventListener('click', () => {
+          renderSlide(currentSlide + 1);
+        });
+      }
+    });
+  </script>
+<!-- END: JavaScript Logic for Theme Switcher, Smooth Natural Tilt & Slides -->
+</body></html>
